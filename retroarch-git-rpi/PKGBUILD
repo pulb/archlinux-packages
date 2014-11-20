@@ -5,8 +5,8 @@
 
 pkgname=retroarch-git-rpi
 pkgver=8330.2787345
-pkgrel=1
-pkgdesc="Reference frontend for the libretro API."
+pkgrel=2
+pkgdesc="Reference frontend for the libretro API. This package is optimized for the Raspberry Pi."
 arch=('armv6h')
 url="http://github.com/libretro/RetroArch"
 license=('GPL')

@@ -17,17 +17,19 @@ provides=('emulationstation')
 conflicts=('emulationstation-git')
 
 if [ "$CARCH" = "armv6h" ]; then
-  depends+=('raspberrypi-firmware')
+  depends+=('raspberrypi-firmware' 'fbset')
 else
   depends+=('libgl')
 fi
 
 source=('git://github.com/Aloshi/EmulationStation.git#branch=unstable'
         'http://emulationstation.org/downloads/themes/simple_latest.zip'
+        'runcommand.sh'
         'emulationstation.service')
 
 md5sums=('SKIP'
          '052bca5ca5f6f53d113addb63710991a'
+         '3cfadffb510367ea55ace362fb04f79b'
          'ff2e2a2f19e916063940b27a4454a08c')
 
 install='emulationstation.install'
@@ -48,6 +50,7 @@ package() {
     cd $_gitname
     install -Dm755 "$srcdir/EmulationStation/emulationstation" "$pkgdir/usr/bin/emulationstation"
     install -Dm644 "$srcdir/EmulationStation/LICENSE.md" "$pkgdir/usr/share/licenses/emulationstation-git/LICENSE"
+    install -Dm755 "$srcdir/runcommand.sh" "$pkgdir/usr/bin/runcommand.sh"
     install -Dm644 "$srcdir/emulationstation.service" "$pkgdir/usr/lib/systemd/system/emulationstation.service"
     install -m755 -d "$pkgdir/etc/emulationstation/themes"
     unzip -d "$pkgdir/etc/emulationstation/themes" "$srcdir/simple_latest.zip"

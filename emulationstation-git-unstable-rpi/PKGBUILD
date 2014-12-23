@@ -5,7 +5,7 @@
 pkgname=emulationstation-git-unstable-rpi
 _gitname=EmulationStation
 pkgver=1.0.0.r395.gfb16dd8
-pkgrel=2
+pkgrel=3
 pkgdesc="A graphical front-end for emulators with controller navigation. This is the unstable branch, optimized for the Raspberry Pi."
 arch=('i686' 'x86_64' 'armv6h')
 url="https://github.com/Aloshi/EmulationStation"

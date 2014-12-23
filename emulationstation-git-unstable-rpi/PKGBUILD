@@ -28,9 +28,9 @@ source=('git://github.com/Aloshi/EmulationStation.git#branch=unstable'
         'emulationstation.service')
 
 md5sums=('SKIP'
-         '052bca5ca5f6f53d113addb63710991a'
+         '152c9775734aae1eb610714db7fa7bf3'
          '3cfadffb510367ea55ace362fb04f79b'
-         'ff2e2a2f19e916063940b27a4454a08c')
+         'c987f41389fe325dd01c9e2d8e917270')
 
 install='emulationstation.install'
 

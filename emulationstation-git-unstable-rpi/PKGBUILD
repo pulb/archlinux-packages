@@ -40,18 +40,18 @@ pkgver() {
 }
 
 build() {
-    mkdir ${_gitname}/build
-    cd ${_gitname}/build
+    mkdir $_gitname/build
+    cd $_gitname/build
     cmake ..
     make
 }
 
 package() {
     cd $_gitname
-    install -Dm755 "$srcdir/EmulationStation/emulationstation" "$pkgdir/usr/bin/emulationstation"
-    install -Dm644 "$srcdir/EmulationStation/LICENSE.md" "$pkgdir/usr/share/licenses/emulationstation-git/LICENSE"
-    install -Dm755 "$srcdir/runcommand.sh" "$pkgdir/usr/bin/runcommand.sh"
-    install -Dm644 "$srcdir/emulationstation.service" "$pkgdir/usr/lib/systemd/system/emulationstation.service"
+    install -Dm755 "EmulationStation/emulationstation" "$pkgdir/usr/bin/emulationstation"
+    install -Dm644 "EmulationStation/LICENSE.md" "$pkgdir/usr/share/licenses/emulationstation-git/LICENSE"
+    install -Dm755 "runcommand.sh" "$pkgdir/usr/bin/runcommand.sh"
+    install -Dm644 "emulationstation.service" "$pkgdir/usr/lib/systemd/system/emulationstation.service"
     install -m755 -d "$pkgdir/etc/emulationstation/themes"
-    unzip -d "$pkgdir/etc/emulationstation/themes" "$srcdir/simple_latest.zip"
+    unzip -d "$pkgdir/etc/emulationstation/themes" "simple_latest.zip"
 }

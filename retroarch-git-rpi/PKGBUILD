@@ -23,17 +23,17 @@ source=("git+https://github.com/libretro/${_gitname}.git")
 md5sums=('SKIP')
 
 pkgver() {
-  cd "${_gitname}"
+  cd $_gitname
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
 build() {
-  cd "${_gitname}"
+  cd $_gitname
   ./configure --prefix=/usr --disable-x11 --disable-oss --disable-pulse --enable-floathard --enable-alsa
   make
 }
 
 package() {
-  cd "${_gitname}"
+  cd $_gitname
   make install DESTDIR="${pkgdir}"
 }
